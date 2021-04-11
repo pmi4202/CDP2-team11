@@ -65,4 +65,5 @@ for index, caption in enumerate(captionList):
     # 테스트용 커맨드라인 생성 및 실행
     commandline = 'ffmpeg -y -i videoA.mp4 -filter_complex "[0:v]drawtext=text='+text+':fontsize=20'+textAlign+\
                   ':y=h*0.9:fontcolor='+textColor+':fontfile='+textFontFile+'" output'+str(index)+'.mp4'
+
     ffmepg(commandline)
