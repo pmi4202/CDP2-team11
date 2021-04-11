@@ -2,6 +2,8 @@
 - 가상환경 접속(콘솔에 절대경로\djangoAPIserver\venv\Scripts\activate 입력)
 - python manage.py runserver 입력
 - post로 동영상파일 전송 (post로 파일전송방법은 insomnia혹은 postman프로그램 참조)
+![image](https://user-images.githubusercontent.com/46833758/114305417-19889f00-9b13-11eb-9bb9-62f0122a64a1.png)
+
 - 서버폴더에 post로 받은 동영상파일과 결과파일 생성됨을 확인
 
 # 더 구현해야하는 것
