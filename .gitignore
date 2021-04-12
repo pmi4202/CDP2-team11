@@ -1,4 +1,4 @@
-djangoAPIserver\*.sqlite3
-djangoAPIserver\*.mp4
-.idea\
-__pycache__\
+djangoAPIserver/*.sqlite3
+djangoAPIserver/*.mp4
+.idea/
+__pycache__/
