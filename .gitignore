@@ -1,0 +1,3 @@
+*.sqlite3
+djangoAPIserver\.idea\
+djangoAPIserver\djangoAPIserver\__pycache__\
