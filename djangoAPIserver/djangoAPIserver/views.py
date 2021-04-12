@@ -21,8 +21,10 @@ def test_view(request):
     path = open(abspath, 'wb')
     shutil.copyfileobj(request.FILES["file"].file, path)
 
-    # json parsing test
-    json_data = json.load(open(r'C:\Users\ks\Desktop\cdp\CDP2-team11\djangoAPIserver\djangoAPIserver\ffmpeg.json', encoding='UTF8'))
+
+    # json parsing test  \Users\samsungpc\Desktop\ffmpeg.json
+    #json_data = json.load(open(r'C:\Users\samsungpc\Desktop\ffmpeg.json', encoding='UTF8'))
+    json_data = json.load(request.FILES["jsonfile"].file)
     captionList = json_data["captionList"]
 
     for index, caption in enumerate(captionList):
@@ -53,7 +55,7 @@ def test_view(request):
 
         # 테스트용 커맨드라인 생성 및 실행
         commandline = 'ffmpeg -y -i '+abspath+' -filter_complex "[0:v]drawtext=text=' + text + ':fontsize=20' + textAlign + \
-                      ':y=h*0.9:fontcolor=' + textColor + ':fontfile=' + textFontFile + '" output' + str(index) + '.mp4'
+                    ':y=h*0.9:fontcolor=' + textColor + ':fontfile=' + textFontFile + '" output' + str(index) + '.mp4'
         ffmepg(commandline)
 
-    return HttpResponse(request.FILES)
+    return HttpResponse(request.FILES) #웹페이지를 response로 넘겨주는 듯
