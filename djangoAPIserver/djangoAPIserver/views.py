@@ -22,7 +22,7 @@ def test_view(request):
     shutil.copyfileobj(request.FILES["file"].file, path)
 
     # json parsing test
-    json_data = json.load(open(r'C:\Users\ks\PycharmProjects\env\drf_api\core\ffmpeg.json', encoding='UTF8'))
+    json_data = json.load(open(r'C:\Users\ks\Desktop\cdp\CDP2-team11\djangoAPIserver\djangoAPIserver\ffmpeg.json', encoding='UTF8'))
     captionList = json_data["captionList"]
 
     for index, caption in enumerate(captionList):
