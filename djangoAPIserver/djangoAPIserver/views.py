@@ -21,11 +21,9 @@ def test_view(request):
     path = open(abspath, 'wb')
     shutil.copyfileobj(request.FILES["file"].file, path)
 
-
-    # json parsing test  \Users\samsungpc\Desktop\ffmpeg.json
-    #json_data = json.load(open(r'C:\Users\samsungpc\Desktop\ffmpeg.json', encoding='UTF8'))
-    json_data = json.load(request.FILES["jsonfile"].file)
-    captionList = json_data["captionList"]
+    # json parsing test
+    jsonData = json.load(request.FILES["jsonfile"].file)
+    captionList = jsonData["captionList"]
 
     for index, caption in enumerate(captionList):
         text = caption["text"]
