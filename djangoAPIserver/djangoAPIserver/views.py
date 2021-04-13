@@ -3,7 +3,8 @@ import os
 import subprocess
 import shutil
 
-from django.http import HttpResponse
+#from django.http import HttpResponse
+from django.http import FileResponse
 
 # 서브프로세스 실행을 통한 ffmpeg 실행함수
 def ffmepg(commandline):
@@ -56,4 +57,8 @@ def test_view(request):
                     ':y=h*0.9:fontcolor=' + textColor + ':fontfile=' + textFontFile + '" output' + str(index) + '.mp4'
         ffmepg(commandline)
 
-    return HttpResponse(request.FILES) #웹페이지를 response로 넘겨주는 듯
+    output = open('./output0.mp4', 'rb')
+    response = FileResponse(output)
+    return response
+
+    #return HttpResponse(request.FILES) #웹페이지를 response로 넘겨주는 듯
